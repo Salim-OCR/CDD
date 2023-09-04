@@ -1,0 +1,82 @@
+#home {
+    width: 95%;
+    margin: 20px auto;
+    padding: 45px;
+    text-align: center;
+    background: $color4;
+    box-shadow: 1px 2px 3px $color3;
+    border-radius: 3px;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-areas:
+        "presentation links"
+        "presentation logos";
+
+    @media only screen and (max-width: 1150px) {
+        width: 100%;
+        grid-template-columns: 50% 50%;
+        grid-template-areas:
+            "presentation presentation"
+            "links links"
+            "logos logos";
+
+        margin: 0px auto;
+        padding: 20px 15px;
+    }
+
+    section {
+        margin: 20px;
+        text-align: start;
+
+        @media only screen and (max-width: 1150px) {
+            margin: 0px;
+        }
+
+        h2 {
+            color: $color3;
+            padding-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        p {
+            margin: 10px;
+            line-height: 40px;
+            letter-spacing: 1.5px;
+
+            @media only screen and (max-width: 1150px) {
+                text-align: center;
+                margin: 0 auto 20px;
+
+            }
+        }
+
+        ul {
+            padding-top: 70px;
+
+            @media only screen and (max-width: 1150px) {
+                padding-top: 0px;
+                margin-bottom: 50px;
+
+            }
+
+            li {
+                margin-bottom: 39px;
+
+                @media only screen and (max-width: 1150px) {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+
+    #presentation {
+        grid-area: presentation;
+    }
+
+    #links {
+        grid-area: links;
+    }
+
+    //ANIMATION
+
+}

@@ -1,0 +1,13 @@
+#header-jouets {
+    @extend #header-lit;
+    background: url("../../../public/images/bgJouets.jpg") center/cover;
+
+    p{
+        color: rgb(59, 43, 43);
+    }
+}
+
+#pageJouets {
+    @extend #pageLits;
+    background: url("../../../public/images/6.jpg") center/cover;
+}

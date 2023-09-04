@@ -1,0 +1,523 @@
+*,
+::before,
+::after {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  list-style-type: none;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+a {
+  font-weight: 500;
+  color: #2593ac;
+}
+
+a:hover {
+  color: rgb(127, 36, 36);
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+#logos-links {
+  grid-area: logos;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  z-index: 100;
+}
+@media only screen and (max-width: 1400px) {
+  #logos-links {
+    width: 100%;
+  }
+}
+#logos-links div {
+  border: 2px solid rgb(127, 36, 36);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 20px;
+  font-size: 2rem;
+  transition: 0.2s;
+}
+#logos-links div:hover {
+  box-shadow: 1px 2px 3px #2593ac;
+}
+#logos-links .home:hover, #logos-links .meubles:hover, #logos-links .jouets:hover, #logos-links .lits:hover {
+  cursor: pointer;
+  background: #f5f5dc;
+  position: relative;
+}
+#logos-links .home:hover::before, #logos-links .meubles:hover::before, #logos-links .jouets:hover::before, #logos-links .lits:hover::before {
+  content: "home";
+  text-transform: capitalize;
+  font-size: 1rem;
+  position: absolute;
+  top: 0px;
+  opacity: 0;
+  animation: apparition 1s ease-out forwards;
+}
+@keyframes apparition {
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+#logos-links .lits:hover {
+  background: #2593ac;
+}
+#logos-links .lits:hover::before {
+  content: "lits";
+}
+#logos-links .jouets:hover {
+  background: #2593ac;
+}
+#logos-links .jouets:hover::before {
+  content: "jouets";
+}
+#logos-links .meubles:hover {
+  background: #2593ac;
+}
+#logos-links .meubles:hover::before {
+  content: "meubles";
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 10px 0 0;
+  opacity: 0;
+  animation: apparition 0.5s 2s ease-in-out forwards;
+}
+@keyframes apparition {
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto 10px;
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: apparition 0.4s 1.6s ease-out forwards;
+}
+@keyframes apparition {
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+.navigation ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navigation ul a {
+  text-decoration: none;
+  padding: 10px;
+  color: #2593ac;
+  transition: 0.2s;
+  text-transform: uppercase;
+}
+.navigation ul a:hover {
+  color: rgb(127, 36, 36);
+}
+.navigation ul .nav-active {
+  position: relative;
+}
+.navigation ul .nav-active::after {
+  content: "";
+  height: 4px;
+  width: 0;
+  background: rgb(127, 36, 36);
+  position: absolute;
+  border-radius: 10px;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-animation: anim 0.3s ease forwards;
+  animation: anim 0.6s ease forwards;
+}
+@-webkit-keyframes anim {
+  to {
+    width: 100%;
+  }
+}
+@keyframes anim {
+  to {
+    width: 100%;
+  }
+}
+
+#headerHome {
+  height: 70vh;
+  max-width: 1900px;
+  margin: auto;
+  background: #f5f5dc;
+}
+#headerHome h1 {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 80%;
+  position: absolute;
+  left: 10%;
+  top: 30%;
+  margin: auto;
+  font-size: clamp(2rem, 4vw, 9rem);
+  color: #2593ac;
+  text-shadow: 4px 1px 3px #c9c9c9;
+  letter-spacing: 0.5rem;
+  line-height: 7rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  opacity: 0;
+  animation: apparition 0.8s 0.3s ease-out forwards;
+  transform: translateY(50%);
+}
+#headerHome h1 span {
+  color: rgb(127, 36, 36);
+  font-weight: 600;
+  padding-bottom: 50px;
+  animation: apparition 0.8s 2s ease-out forwards;
+  transform: translateY(-50%);
+}
+#headerHome .pictureBg {
+  background: url(../../../public/images/chambre1.jpg) center/cover;
+  height: 164vh;
+  width: 100%;
+}
+@keyframes apparition {
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media only screen and (max-width: 1150px) {
+  #headerHome {
+    height: 37vh;
+  }
+  #headerHome h1 {
+    line-height: 4rem;
+    width: 100%;
+    left: 0;
+    top: 20%;
+  }
+  #headerHome h1 span {
+    padding-bottom: 20px;
+  }
+  #headerHome .pictureBg {
+    height: 37vh;
+  }
+}
+
+footer {
+  position: relative;
+  background: rgba(207, 201, 201, 0.87);
+  width: 100%;
+  max-width: 1900px;
+  text-align: center;
+}
+footer::before {
+  content: "";
+  position: absolute;
+  border-top: 2px solid rgb(127, 36, 36);
+  width: 80%;
+  left: 50%;
+  transform: translate(-50%);
+}
+footer h2, footer #header-lit p, footer #header-jouets p, footer #header-meubles p, #header-lit footer p, #header-jouets footer p, #header-meubles footer p {
+  padding: 20px 0;
+}
+footer p {
+  padding: 10px;
+}
+
+#home {
+  width: 95%;
+  margin: 20px auto;
+  padding: 45px;
+  text-align: center;
+  background: #f5f5dc;
+  box-shadow: 1px 2px 3px rgb(127, 36, 36);
+  border-radius: 3px;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-template-areas: "presentation links" "presentation logos";
+}
+@media only screen and (max-width: 1150px) {
+  #home {
+    width: 100%;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "presentation presentation" "links links" "logos logos";
+    margin: 0px auto;
+    padding: 20px 15px;
+  }
+}
+#home section {
+  margin: 20px;
+  text-align: start;
+}
+@media only screen and (max-width: 1150px) {
+  #home section {
+    margin: 0px;
+  }
+}
+#home section h2, #home section #header-lit p, #home section #header-jouets p, #home section #header-meubles p, #header-lit #home section p, #header-jouets #home section p, #header-meubles #home section p {
+  color: rgb(127, 36, 36);
+  padding-bottom: 20px;
+  text-transform: uppercase;
+}
+#home section p {
+  margin: 10px;
+  line-height: 40px;
+  letter-spacing: 1.5px;
+}
+@media only screen and (max-width: 1150px) {
+  #home section p {
+    text-align: center;
+    margin: 0 auto 20px;
+  }
+}
+#home section ul {
+  padding-top: 70px;
+}
+@media only screen and (max-width: 1150px) {
+  #home section ul {
+    padding-top: 0px;
+    margin-bottom: 50px;
+  }
+}
+#home section ul li {
+  margin-bottom: 39px;
+}
+@media only screen and (max-width: 1150px) {
+  #home section ul li {
+    margin-bottom: 15px;
+  }
+}
+#home #presentation {
+  grid-area: presentation;
+}
+#home #links {
+  grid-area: links;
+}
+
+#header-lit, #header-jouets, #header-meubles {
+  background: url("../../../public/images/1 (24).jpg") center/cover;
+  height: 70vh;
+  position: relative;
+  width: 98%;
+  margin: auto;
+  opacity: 0;
+  animation: apparition 2s 1.2s ease-out forwards;
+  transform: translateX(-50%);
+  /* Style for LogoLink component */
+}
+@keyframes apparition {
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+#header-lit h2, #header-jouets h2, #header-meubles h2, #header-lit p, #header-jouets p, #header-meubles p {
+  position: absolute;
+  top: 5%;
+  left: 60%;
+  text-transform: uppercase;
+  opacity: 0;
+  font-weight: 400;
+  color: #2593ac;
+  font-size: 3rem;
+  text-shadow: 0px 13px 20px;
+  letter-spacing: 6px;
+  animation: apparition 2s 1.3s ease-out forwards;
+}
+#header-lit p, #header-jouets p, #header-meubles p {
+  text-transform: capitalize;
+  font-size: 1.1rem;
+  letter-spacing: 1.2px;
+  line-height: 30px;
+  width: 600px;
+  font-weight: 600;
+  color: rgb(127, 36, 36);
+  text-shadow: 1px 2px 3px rgb(179, 166, 166);
+}
+#header-lit p:nth-of-type(1), #header-jouets p:nth-of-type(1), #header-meubles p:nth-of-type(1) {
+  top: 10%;
+  left: 115px;
+}
+#header-lit p:nth-of-type(2), #header-jouets p:nth-of-type(2), #header-meubles p:nth-of-type(2) {
+  top: 57%;
+  left: 9%;
+}
+#header-lit #logos-links, #header-jouets #logos-links, #header-meubles #logos-links {
+  width: 6%;
+  flex-direction: column;
+  position: fixed;
+  top: 140px;
+  left: 90%;
+}
+#header-lit #logos-links div, #header-jouets #logos-links div, #header-meubles #logos-links div {
+  border: 2px solid rgb(127, 36, 36);
+  height: 100px;
+  border-radius: 30px;
+  font-size: 2rem;
+  margin: 0 0 5px;
+  transition: 0.2s;
+}
+@media only screen and (max-width: 1350px) {
+  #header-lit, #header-jouets, #header-meubles {
+    background: url("../../../public/images/headerLit1.jpg") center/cover;
+    width: 100%;
+  }
+  #header-lit h2, #header-jouets h2, #header-meubles h2, #header-lit p, #header-jouets p, #header-meubles p {
+    color: rgb(0, 0, 0);
+    left: 40%;
+    font-size: 2rem;
+    text-shadow: 0px 0px 7px whitesmoke;
+  }
+}
+@media only screen and (max-width: 1350px) and (max-width: 950px) {
+  #header-lit h2, #header-jouets h2, #header-meubles h2, #header-lit p, #header-jouets p, #header-meubles p {
+    left: 15%;
+  }
+}
+@media only screen and (max-width: 1350px) {
+  #header-lit p, #header-jouets p, #header-meubles p {
+    font-size: 1.1rem;
+    width: 95%;
+    text-align: center;
+  }
+  #header-lit p:nth-of-type(1), #header-jouets p:nth-of-type(1), #header-meubles p:nth-of-type(1) {
+    top: 23%;
+    left: 2%;
+  }
+}
+@media only screen and (max-width: 1350px) and (max-width: 600px) {
+  #header-lit p:nth-of-type(1), #header-jouets p:nth-of-type(1), #header-meubles p:nth-of-type(1) {
+    top: 15%;
+  }
+}
+@media only screen and (max-width: 1350px) {
+  #header-lit p:nth-of-type(2), #header-jouets p:nth-of-type(2), #header-meubles p:nth-of-type(2) {
+    top: 60%;
+    left: 2%;
+  }
+}
+
+#pageLits, #pageJouets, #pageMeubles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: url("../../../public/images/3.jpg") center/cover;
+  /* Style for ProductCard components */
+}
+#pageLits h2, #pageJouets h2, #pageMeubles h2, #pageLits #header-lit p, #pageJouets #header-lit p, #pageLits #header-jouets p, #pageJouets #header-jouets p, #pageMeubles #header-lit p, #pageMeubles #header-jouets p, #pageLits #header-meubles p, #pageJouets #header-meubles p, #pageMeubles #header-meubles p, #header-lit #pageLits p, #header-lit #pageJouets p, #header-jouets #pageLits p, #header-jouets #pageJouets p, #header-lit #pageMeubles p, #header-jouets #pageMeubles p, #header-meubles #pageLits p, #header-meubles #pageJouets p, #header-meubles #pageMeubles p {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: start;
+  text-transform: uppercase;
+}
+#pageLits section, #pageJouets section, #pageMeubles section {
+  margin: 25px 10px;
+  border: 1px solid #2593ac;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: #f7f7f7;
+}
+#pageLits section h3, #pageJouets section h3, #pageMeubles section h3 {
+  text-align: center;
+}
+#pageLits section ul, #pageJouets section ul, #pageMeubles section ul {
+  list-style: none;
+  width: 95%;
+  margin: auto;
+}
+#pageLits .collections, #pageJouets .collections, #pageMeubles .collections, #pageLits .accessoires, #pageJouets .accessoires, #pageMeubles .accessoires {
+  width: 90%;
+}
+#pageLits .collections ul, #pageJouets .collections ul, #pageMeubles .collections ul, #pageLits .accessoires ul, #pageJouets .accessoires ul, #pageMeubles .accessoires ul {
+  display: flex;
+}
+#pageLits .collections ul li, #pageJouets .collections ul li, #pageMeubles .collections ul li, #pageLits .accessoires ul li, #pageJouets .accessoires ul li, #pageMeubles .accessoires ul li {
+  margin: 0 10px;
+}
+#pageLits .product-card, #pageJouets .product-card, #pageMeubles .product-card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+#pageLits .product-card h3, #pageJouets .product-card h3, #pageMeubles .product-card h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+  text-transform: capitalize;
+  text-align: center;
+}
+#pageLits .product-card img, #pageJouets .product-card img, #pageMeubles .product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+#pageLits .product-card p, #pageJouets .product-card p, #pageMeubles .product-card p {
+  margin-bottom: 10px;
+}
+#pageLits .product-card a, #pageJouets .product-card a, #pageMeubles .product-card a {
+  color: blue;
+}
+@media only screen and (max-width: 950px) {
+  #pageLits section, #pageJouets section, #pageMeubles section {
+    margin: 5px 0;
+  }
+  #pageLits .collections, #pageJouets .collections, #pageMeubles .collections, #pageLits .accessoires, #pageJouets .accessoires, #pageMeubles .accessoires {
+    width: 99%;
+  }
+  #pageLits .collections ul, #pageJouets .collections ul, #pageMeubles .collections ul, #pageLits .accessoires ul, #pageJouets .accessoires ul, #pageMeubles .accessoires ul {
+    display: flex;
+    flex-direction: column;
+  }
+  #pageLits .collections ul li, #pageJouets .collections ul li, #pageMeubles .collections ul li, #pageLits .accessoires ul li, #pageJouets .accessoires ul li, #pageMeubles .accessoires ul li {
+    margin: 0 10px;
+  }
+  #pageLits .product-card, #pageJouets .product-card, #pageMeubles .product-card {
+    margin: 0 10px;
+  }
+}
+
+#header-meubles {
+  background: url("../../../public/images/bgMeuble.jpg") center/cover;
+  width: 100%;
+}
+
+#pageMeubles {
+  background: url("../../../public/images/bgMeuble1.jpg") center/cover;
+}
+
+#header-jouets {
+  background: url("../../../public/images/bgJouets.jpg") center/cover;
+}
+#header-jouets p {
+  color: rgb(59, 43, 43);
+}
+
+#pageJouets {
+  background: url("../../../public/images/6.jpg") center/cover;
+}/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,10 @@
+#header-meubles {
+    @extend #header-lit;
+    background: url("../../../public/images/bgMeuble.jpg") center/cover;
+    width: 100%;
+}
+
+#pageMeubles {
+    @extend #pageLits;
+    background: url("../../../public/images/bgMeuble1.jpg") center/cover;
+}

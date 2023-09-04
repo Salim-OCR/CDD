@@ -1,0 +1,25 @@
+footer {
+    position: relative;
+    background: $color1;
+    width: 100%;
+    max-width: 1900px;
+    text-align: center;
+ 
+
+    &::before {
+        content: "";
+        position: absolute;
+        border-top: 2px solid $color3;
+        width: 80%;
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+    h2 {
+        padding: 20px 0;
+    }
+
+    p {
+        padding: 10px;
+    }
+}

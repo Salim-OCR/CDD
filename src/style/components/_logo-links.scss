@@ -1,0 +1,84 @@
+#logos-links {
+    grid-area: logos;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: 100;
+
+    @media only screen and (max-width: 1400px) {
+        width: 100%;
+    }
+
+    div {
+        border: 2px solid $color3;
+        @include center;
+        width: 100px;
+        height: 100px;
+        border-radius: 20px;
+        font-size: 2rem;
+        transition: .2s;
+
+        &:hover {
+            box-shadow: 1px 2px 3px $color2;
+        }
+    }
+
+    .home {
+        &:hover {
+            cursor: pointer;
+            background: $color4;
+            position: relative;
+
+            &::before {
+                content: "home";
+                text-transform: capitalize;
+                font-size: 1rem;
+                position: absolute;
+                top: 0px;
+                opacity: 0;
+                animation: apparition 1s ease-out forwards;
+            }
+        }
+
+        @include animation;
+    }
+
+    .lits {
+        @extend .home;
+
+        &:hover {
+            background: $color2;
+
+            &::before {
+                content: "lits";
+            }
+        }
+    }
+
+    .jouets {
+        @extend .home;
+
+        &:hover {
+            background: $color2;
+
+            &::before {
+                content: "jouets";
+            }
+        }
+    }
+
+    .meubles {
+        @extend .home;
+
+        &:hover {
+            background: $color2;
+
+            &::before {
+                content: "meubles";
+            }
+        }
+    }
+
+
+}

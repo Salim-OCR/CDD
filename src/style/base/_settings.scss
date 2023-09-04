@@ -1,0 +1,39 @@
+//les variables
+$color1: rgba(207, 201, 201, 0.87);
+$color2: #2593ac;
+$color3: rgb(127, 36, 36);
+$color4: #f5f5dc;
+$color5: #c9c9c9;
+$black: rgb(40, 40, 40);
+$red: rgb(253, 87, 87);
+
+*,
+::before,
+::after {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    list-style-type: none;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+a {
+    font-weight: 500;
+    color: $color2;
+}
+
+a:hover {
+    color: $color3;
+}
+
+h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+}
